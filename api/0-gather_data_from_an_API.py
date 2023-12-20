@@ -25,4 +25,4 @@ if __name__ == "__main__":
     print(f"Employee {employee['name']} is done with ", end="")
     print(f"tasks({len(tasks_completed)}/{len(tasks_record)}):")
     for task in tasks_completed:
-        print(f"\t {task['title']}")
+        print(f"\t " + task["title"])
