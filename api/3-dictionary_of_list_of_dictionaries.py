@@ -16,10 +16,10 @@ if __name__ == "__main__":
 
     json_obj = {
         f"{user['id']}": [{
+                "username": user["username"],
                 "task": task["title"],
-                "completed": task["completed"],
-                "username": user["username"]
-                } for task in task_record]
+                "completed": task["completed"]
+                } for task in task_record if user['id'] == task['userId']]
         for user in user_record
     }
 
