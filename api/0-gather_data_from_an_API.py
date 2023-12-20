@@ -17,7 +17,7 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    id = argv[1]
+    id = int(argv[1])
     NUMBER_OF_DONE_TASKS = 0
     TOTAL_NUMBER_OF_TASKS = 0
     url = f"https://jsonplaceholder.typicode.com/users/{id}"
