@@ -15,12 +15,12 @@ if __name__ == "__main__":
 
     id = int(argv[1])
     url = f"https://jsonplaceholder.typicode.com/users/{id}"
-    EMPLOYEE_NAME = requests.get(url).json()["name"]
+    user_name = requests.get(url).json()["username"]
     task_record = requests.get(url + "/todos").json()
 
     with open(f"{id}.csv", "w") as csvfile:
         write = csv.writer(csvfile, quoting=QUOTE_ALL)
         for task in task_record:
             write.writerow([
-                id, EMPLOYEE_NAME, task["completed"], task["title"]
+                id, user_name, task["completed"], task["title"]
             ])
