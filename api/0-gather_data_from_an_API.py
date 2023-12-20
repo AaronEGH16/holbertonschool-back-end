@@ -19,9 +19,9 @@ if __name__ == "__main__":
     """
 
     id = int(argv[1])
-    url = f"https://jsonplaceholder.typicode.com/users/{id}"
-    employee = (requests.get(url)).json()
-    task_record = requests.get(url + "/todos").json()
+    url = f"https://jsonplaceholder.typicode.com/"
+    employee = requests.get(url + f"users/{id}").json()
+    task_record = requests.get(url + f"users/{id}/todos").json()
     tasks_completed = [tasks for tasks in task_record if tasks["completed"]]
 
     print(f"Employee {employee['name']} is done" +
