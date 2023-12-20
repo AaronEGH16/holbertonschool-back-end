@@ -17,14 +17,15 @@ if __name__ == "__main__":
             - task title
         and print text
     """
+    url = f"https://jsonplaceholder.typicode.com/"
 
     id = int(argv[1])
-    url = f"https://jsonplaceholder.typicode.com/"
     employee = requests.get(url + f"users/{id}").json()
-    task_record = requests.get(url + f"users/{id}/todos").json()
-    tasks_completed = [tasks for tasks in task_record if tasks["completed"]]
+    tasks_record = requests.get(url + f"users/{id}/todos").json()
+
+    tasks_completed = [tasks for tasks in tasks_record if tasks["completed"]]
 
     print(f"Employee {employee['name']} is done with ", end="")
-    print(f"tasks({len(tasks_completed)}/{len(task_record)}):")
+    print(f"tasks({len(tasks_completed)}/{len(tasks_record)}):")
     for task in tasks_completed:
         print(f"\t {task['title']}")
