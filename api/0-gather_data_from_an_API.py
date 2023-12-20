@@ -14,8 +14,8 @@ if __name__ == "__main__":
             - task title
         and print text
     """
-    from sys import argv
     import requests
+    from sys import argv
 
     id = argv[1]
     NUMBER_OF_DONE_TASKS = 0
