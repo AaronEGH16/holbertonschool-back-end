@@ -4,13 +4,12 @@
     and csv exporter
 """
 
-from csv import QUOTE_ALL
-
 
 if __name__ == "__main__":
     """main function"""
     import csv
     import requests
+    from csv import QUOTE_ALL
     from sys import argv
 
     id = int(argv[1])
