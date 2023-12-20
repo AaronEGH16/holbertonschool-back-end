@@ -24,8 +24,7 @@ if __name__ == "__main__":
     task_record = requests.get(url + f"users/{id}/todos").json()
     tasks_completed = [tasks for tasks in task_record if tasks["completed"]]
 
-    print(f"Employee {employee['name']} is done" +
-          f" with tasks({len(tasks_completed)}/{len(task_record)}):")
-    for task in task_record:
-        if task['completed']:
-            print(f"\t {task['title']}")
+    print(f"Employee {employee['name']} is done with ", end="")
+    print(f"tasks({len(tasks_completed)}/{len(task_record)}):")
+    for task in tasks_completed:
+        print(f"\t {task['title']}")
