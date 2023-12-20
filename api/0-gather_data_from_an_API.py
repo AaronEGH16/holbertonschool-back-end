@@ -3,6 +3,9 @@
     this module contains a simple API data gether
 """
 
+import requests
+from sys import argv
+
 if __name__ == "__main__":
     """
         (execute function only if __name__ is == "__main__")
@@ -14,11 +17,8 @@ if __name__ == "__main__":
             - task title
         and print text
     """
-    import requests
-    from sys import argv
 
     id = int(argv[1])
-    NUMBER_OF_DONE_TASKS = 0
     url = f"https://jsonplaceholder.typicode.com/users/{id}"
     employee = (requests.get(url)).json()
     task_record = requests.get(url + "/todos").json()
