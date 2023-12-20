@@ -1,22 +1,19 @@
 #!/usr/bin/python3
 """
     this module contains a simple API data gether
+
+    get from user and todo lists:
+        - user name
+        - number of tasks
+        - tasks completed
+        - task title
+    and print text
 """
 
 import requests
 from sys import argv
 
 if __name__ == "__main__":
-    """
-        (execute function only if __name__ is == "__main__")
-
-        get from user id:
-            - user name
-            - number of tasks
-            - tasks completed
-            - task title
-        and print text
-    """
     url = f"https://jsonplaceholder.typicode.com/"
 
     id = int(argv[1])
